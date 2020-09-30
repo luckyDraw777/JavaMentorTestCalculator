@@ -6,7 +6,7 @@ public enum ServiceMessage {
     WRONG_INPUT("Wrong input! Please try again."),
     WRONG_NUMBER("Wrong number! Please try again.");
 
-    private String message;
+    private final String message;
 
     ServiceMessage(String message) {
         this.message = message;

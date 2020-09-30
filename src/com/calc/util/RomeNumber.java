@@ -21,7 +21,7 @@ public enum RomeNumber {
     CM(900),
     M(1000);
 
-    private int value;
+    private final int value;
 
     RomeNumber(int value) {
         this.value = value;

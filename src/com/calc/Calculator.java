@@ -7,14 +7,10 @@ import com.calc.util.MessageHandler;
 import com.calc.util.MessageParser;
 import com.calc.util.ServiceMessage;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
 
 public class Calculator{
-
-    private Map<String, String[]> input;
 
     public void start() throws IOException {
 
@@ -24,7 +20,7 @@ public class Calculator{
             Message message = MessageHandler.getMessage();
 
             try {
-                input = MessageParser.parseMessage(message);
+                Map<String, String[]> input = MessageParser.parseMessage(message);
                 for(Map.Entry<String, String[]> stringEntry : input.entrySet()){
                     if(MessageParser.isOnlyRomeNumbers(message.getMessage())){
                         System.out.println(MessageParser.arabicToRoman(doAction(Integer.parseInt(stringEntry.getValue()[0]),
